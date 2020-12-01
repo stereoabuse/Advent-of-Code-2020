@@ -13,7 +13,7 @@ def web_input(day, year=2020):
 
 def local_input(day):
     """Takes input data from local file, returns string or FileNotFoundError."""
-    file = f'input/{str(day).zfill(2)}'
+    file = f'../input/{str(day).zfill(2)}'
     try:
         return open(file, 'r').read()
     except FileNotFoundError as error:
@@ -22,7 +22,7 @@ def local_input(day):
 
 def gen_local_input(day, year=2020):
     """Creates local file of the day's input data."""
-    with open(f'inputs/{str(day).zfill(2)}', 'w') as file:
+    with open(f'../inputs/{str(day).zfill(2)}', 'w') as file:
         file.write(web_input(day, year))
 
 
