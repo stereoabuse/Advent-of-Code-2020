@@ -39,7 +39,7 @@ def submit(answer, day, part, year=2020):
 # Parsing inputs
 def integers(s):
     """Takes a string and return digits split by any other character into generator."""
-    return (int(i) for i in re.split(r'\D+', s) if i)
+    return (int(i) for i in re.split('\D+', s) if i)
 
 
 def taxi_distance(x, y=(0, 0)):

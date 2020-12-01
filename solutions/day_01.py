@@ -1,25 +1,24 @@
 # Day 1: Report Repair
 
+from utils import integers
 
-d = open('../inputs/01').read()
 GOAL = 2020
 
-
-def parse(data):
-    return list(map(int, data.splitlines()))
+d = open('../inputs/01').read()
+d = list(integers(d))
 
 
 def part_1(data):
-    for a in parse(data):
-        for b in parse(data):
+    for a in data:
+        for b in data:
             if a != b and a + b == GOAL:
                 return a * b
 
 
 def part_2(data):
-    for a in parse(data):
-        for b in parse(data):
-            for c in parse(data):
+    for a in data:
+        for b in data:
+            for c in data:
                 if a != b and b != c and a + b + c == GOAL:
                     return a * b * c
 
