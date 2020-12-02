@@ -1,27 +1,36 @@
-# Day 1: Report Repair
+""" day_01.py -- Advent of Code 2020 Day 1: Report Repair
+
+    Author: Chris Bowman
+    Last Modified: 12/1/2020
+    License: MIT
+"""
 
 from utils import integers
 
 GOAL = 2020
 
-d = open('../inputs/01').read()
-d = list(integers(d))
-
 
 def part_1(data):
-    for a in data:
-        for b in data:
-            if a != b and a + b == GOAL:
+    for index_a, a in enumerate(data):
+        for b in data[index_a:]:
+            if a + b == GOAL:
                 return a * b
 
 
 def part_2(data):
-    for a in data:
-        for b in data:
-            for c in data:
-                if a != b and b != c and a + b + c == GOAL:
+    for index_a, a in enumerate(data):
+        for index_b, b in enumerate(data[index_a:]):
+            for c in data[index_b:]:
+                if a + b + c == GOAL:
                     return a * b * c
 
 
-print(part_1(d))
-print(part_2(d))
+def main():
+    d = open('../inputs/01').read()
+    d = list(integers(d))
+    print(part_1(d))
+    print(part_2(d))
+
+
+if __name__ == '__main__':
+    main()
