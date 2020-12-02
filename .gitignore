@@ -1,3 +1,4 @@
 solutions/config.py
+solutions/*.jl
 *.pyc
 *.jl
