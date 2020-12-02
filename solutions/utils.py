@@ -1,7 +1,15 @@
+""" utils.py -- Advent of Code 2020 Utility functions
+
+    Author: Chris Bowman
+    Last Modified: 12/1/2020
+    License: MIT
+"""
+
+
 import re
 import requests
 from bs4 import BeautifulSoup
-import config   # AoC website login
+import config               # AoC website login
 
 
 # Web interaction
@@ -36,7 +44,7 @@ def submit(answer, day, part, year=2020):
     return reply
 
 
-# Parsing inputs
+# Parsing
 def integers(s):
     """Takes a string and return digits split by any other character into generator."""
     return (int(i) for i in re.split('\D+', s) if i)
