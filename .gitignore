@@ -1,4 +1,2 @@
 solutions/config.py
-solutions/day_01.jl
 *.pyc
-*.jl
