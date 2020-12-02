@@ -1,2 +1,3 @@
 solutions/config.py
 *.pyc
+*.jl

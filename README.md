@@ -4,8 +4,9 @@ Goals for this year include learning git and PyCharm.
                              
                              
 ### [Day 01](solutions/day_01.py)
-I finished 200th in part 1 and 1133 in part 2.  Unfortunately I got a `503 error` for a bit over one minute but still 
-happy with how I did so far.  I solved this with a simple naive double or triple for-loop, checking to make sure that 
+I solved this with a naive double or triple for-loop, checking to make sure that 
 the values for each entry was unique and returning the product when the two loops found the right sum.
 
-I also hacked together a solution in Julia
+### [Day 02](solutions/day_02.py)
+Slowest part for me was parsing.  Adding a new function to my utilities that splits each line in alphanum chunks.  Also had off by one error with indexes where I increased the index offset rather than decreased by one.
+Too much time working with indexes in only Python.
