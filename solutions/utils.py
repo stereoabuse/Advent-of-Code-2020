@@ -5,8 +5,9 @@
     License: MIT
 """
 
-
+import os.path
 import re
+import time
 import requests
 from bs4 import BeautifulSoup
 import config               # AoC website login
@@ -48,6 +49,10 @@ def submit(answer, day, part, year=2020):
 def integers(s):
     """Takes a string and return digits split by any other character into generator."""
     return (int(i) for i in re.split('\D+', s) if i)
+
+
+def alphanums(s):
+    return [i for i in re.split('\W+', s) if i]
 
 
 def taxi_distance(x, y=(0, 0)):
