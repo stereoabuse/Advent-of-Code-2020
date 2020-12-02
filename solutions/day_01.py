@@ -1,7 +1,7 @@
 """ day_01.py -- Advent of Code 2020 Day 1: Report Repair
 
     Author: Chris Bowman
-    Last Modified: 12/1/2020
+    Last Modified: 12/2/2020
     License: MIT
 """
 
@@ -27,7 +27,7 @@ def part_2(data):
 
 def main():
     d = open('../inputs/01').read()
-    d = list(integers(d))
+    d = integers(d)
     print(part_1(d))
     print(part_2(d))
 

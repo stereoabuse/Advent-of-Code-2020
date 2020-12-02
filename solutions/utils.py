@@ -1,13 +1,11 @@
 """ utils.py -- Advent of Code 2020 Utility functions
 
     Author: Chris Bowman
-    Last Modified: 12/1/2020
+    Last Modified: 12/2/2020
     License: MIT
 """
 
-import os.path
 import re
-import time
 import requests
 from bs4 import BeautifulSoup
 import config               # AoC website login
@@ -48,13 +46,15 @@ def submit(answer, day, part, year=2020):
 # Parsing
 def integers(s):
     """Takes a string and return digits split by any other character into generator."""
-    return (int(i) for i in re.split('\D+', s) if i)
+    return [int(i) for i in re.split('\D+', s) if i]
 
 
 def alphanums(s):
+    """Splits a string by any non letter or digit and returns a list"""
     return [i for i in re.split('\W+', s) if i]
 
 
+# Math operations
 def taxi_distance(x, y=(0, 0)):
     """Return integer of Manhattan distance of 2 points."""
     return abs(x[0] - x[1]) + abs(y[0] - y[1])
