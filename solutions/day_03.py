@@ -1,4 +1,4 @@
-""" day_03.py -- Advent of Code 2020 Day 3
+""" day_03.py -- Advent of Code 2020 Day 3: Toboggan Trajectory
 
     Author: Chris Bowman
     Last Modified: 12/3/2020
