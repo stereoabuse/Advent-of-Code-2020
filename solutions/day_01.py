@@ -26,8 +26,7 @@ def part_2(data):
 
 
 def main():
-    d = open('../inputs/01').read()
-    d = integers(d)
+    d = integers(open('../inputs/01').read())
     print(part_1(d))
     print(part_2(d))
 
