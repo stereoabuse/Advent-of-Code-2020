@@ -8,7 +8,7 @@
 import re
 import requests
 from bs4 import BeautifulSoup
-import config               # AoC website login
+import config  # AoC website login
 
 
 # Web interaction
@@ -51,7 +51,7 @@ def integers(s):
 
 def alphanums(s):
     """Splits a string by any non letter or digit and returns a list"""
-    return [i for i in re.split('\W+', s) if i]
+    return [i for i in re.split('\W+', s, re.MULTILINE) if i]
 
 
 # Math operations
