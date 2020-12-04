@@ -13,7 +13,7 @@ def part_1(data, regexes):
 
 
 def part_2(data, regexps):
-    return sum(1 for pp in data if all(re.findall(reg, pp) for reg in regexps))
+    return sum(1 for pp in data if all(re.search(reg, pp) for reg in regexps))
 
 
 def main():
