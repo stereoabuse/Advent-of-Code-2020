@@ -10,3 +10,10 @@ Slowest part for me was parsing the input text.  Added a new function to my util
 
 ### [Day 03](solutions/day_03.py)
 Problem itself was straightforward.  Start looping through row and column indexes by the slope and check each time if it has a `#`.  Another Python index error today where I swapped rows and columns in the slope for a few minutes before catching it.
+
+### [Day 04](solutions/day_04.py)
+Finished part 1 in 400ths place only to precipitously drop trying to find the edge cases that were ruining my 7 [lines of regex](https://gist.github.com/stereoabuse/aba0824a3614590c76d21b2749183265).  Still have not finished so I get to sleep on this.  A better option may be instead of a regex matching function where I feed in new regexes to take each criterion individually and do more Pythonic operations with `int`, or `dict` and make it readable instead of `r'hgt:((1[5-8][0-9]|19[0-3])cm|((59|6[0-9]|7[0-6])in|))'`.  That will likely help catch the bug, too. 
+
+
+**To Do**
+    - 4 part 2
