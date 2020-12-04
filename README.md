@@ -12,4 +12,4 @@ Slowest part for me was parsing the input text.  Added a new function to my util
 Problem itself was straightforward.  Start looping through row and column indexes by the slope and check each time if it has a `#`.  Another Python index error today where I swapped rows and columns in the slope for a few minutes before catching it.
 
 ### [Day 04](solutions/day_04.py)
-Finished part 1 in 360th place.  Part 2 ... not so lucky.  There turned out to be missing an edge case where `(?!\S)` was needed at the end of `r'(pid:\d{9})'` to stop a 10-digit pid getting through.  So that took me a couple hours, a meal, and a full night of sleep to find.  Adding regex-fu to goals now.
+Finished part 1 in 360th place.  Part 2 ... not so lucky.  There turned out to be missing an edge case where `(?!\S)` was needed at the end of `r'(pid:\d{9})'` to stop a 10-digit pid getting through.  That took me a couple hours, a meal, and a full night of sleep to find.  Adding regex-fu to goals now.
