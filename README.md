@@ -12,4 +12,8 @@ Slowest part for me was parsing the input text.  Added a new function to my util
 Problem itself was straightforward.  Start looping through row and column indexes by the slope and check each time if it has a `#`.  Another Python index error today where I swapped rows and columns in the slope for a few minutes before catching it.
 
 ### [Day 04](solutions/day_04.py)
-Finished part 1 in 360th place.  Part 2 ... not so lucky.  There turned out to be missing an edge case where `(?!\S)` was needed at the end of `r'(pid:\d{9})'` to stop a 10-digit pid getting through.  That took me a couple hours, a meal, and a full night of sleep to find.  Adding regex-fu to goals now.
+Finished part 1 in 360th place.  Part 2 ... not so lucky.  There turned out to be missing an edge case where `(?!\S)` was needed at the end of `r'(pid:\d{9})'` to stop a 10-digit pid getting through.  That took me a couple of hours, a meal, and a full night of sleep to find.  Adding regex-fu to goals now.
+
+
+### [Day 05](solutions/day_05.py)
+This one asked to turn a string of letters into a row and column coordinate with some additional arithmetic.  I turned the letters into binary and from there into integers to get the seat IDs.  From there finding max was quick as was checking to find the first seat not represented in the list of generated seat IDs. 
