@@ -1,5 +1,9 @@
+# AoC website session ID
 solutions/config.py
-*.pyc
+
+# jupyter notebook files for quick prototyping
 *.ipynb
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
+
+*.pyc

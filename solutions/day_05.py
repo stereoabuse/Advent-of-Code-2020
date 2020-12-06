@@ -6,7 +6,7 @@
 """
 
 
-def binarize(seats):
+def binary_space_parse(seats: list) -> list:
     def row(seat):
         return int(seat[:7].replace('F', '0').replace('B', '1'), 2)
 
@@ -16,12 +16,11 @@ def binarize(seats):
     return [row(seat) * 8 + column(seat) for seat in seats]
 
 
-def part_1(seats):
-    return max(binarize(seats))
+def part_1(ids: list) -> int:
+    return max(ids)
 
 
-def part_2(seats):
-    ids = binarize(seats)
+def part_2(ids: list) -> int:
     for i in range(min(ids), max(ids)):
         if i not in ids:
             return i
@@ -29,8 +28,9 @@ def part_2(seats):
 
 def main():
     d = open('../inputs/05').read().splitlines()
-    print(part_1(d))
-    print(part_2(d))
+    ids = binary_space_parse(d)
+    print(part_1(ids))
+    print(part_2(ids))
 
 
 if __name__ == '__main__':

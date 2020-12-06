@@ -8,7 +8,7 @@
 import math
 
 
-def part_1(data, slope):
+def part_1(data: list, slope: tuple) -> int:
     trees = 0
     right, down = (0, 0)
     while down < len(data):
@@ -19,7 +19,7 @@ def part_1(data, slope):
     return trees
 
 
-def part_2(data, slopes):
+def part_2(data: list, slopes: tuple) -> int:
     return math.prod(part_1(data, slope) for slope in slopes)
 
 
