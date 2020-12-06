@@ -17,3 +17,7 @@ Finished part 1 in 360th place.  Part 2 ... not so lucky.  There turned out to b
 
 ### [Day 05](solutions/day_05.py)
 This one asked to turn a string of letters into a row and column coordinate with some additional arithmetic.  I turned the letters into binary and from there into integers to get the seat IDs.  From there part 1 required finding the max of IDs from the input and part 2 needed a loop to find the id between min and max of IDs that did not appear in the list. 
+
+
+### [Day 06](solutions/day_06.py)
+Not as fast as the last few days.  I solved this in jupyter first then struggled to remember how I did part 1 when I refactored into PyCharm.  Parsing is not clean, and my current functions are essentially overly complicated one-liners.  Nothing new-to-me today.
