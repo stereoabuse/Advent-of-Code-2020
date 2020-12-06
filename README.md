@@ -20,4 +20,4 @@ This one asked to turn a string of letters into a row and column coordinate with
 
 
 ### [Day 06](solutions/day_06.py)
-Not as fast as the last few days.  I solved this in jupyter first then struggled to remember how I did part 1 when I refactored into PyCharm.  Parsing is not clean, and my current functions are essentially overly complicated one-liners.  Nothing new-to-me today.
+Not as fast as the last few days.  First solved in jupyter then reworked in Pycharm for terseness (hopefully not at the expense of clarity).  After parsing the input data each function just needed a sum of set length, or a sum of a sum of `item.count(letter)`.  I first played with Counters but using sets are the easier and clearer option.  May be with another refactor still if it seems _too_ terse.
