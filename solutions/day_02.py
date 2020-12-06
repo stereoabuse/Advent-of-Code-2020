@@ -8,7 +8,7 @@
 from utils import alphanums
 
 
-def part_1(data):
+def part_1(data: list) -> int:
     total = 0
     for lo, hi, let, pw in data:
         if int(lo) <= pw.count(let) <= int(hi):
@@ -16,7 +16,7 @@ def part_1(data):
     return total
 
 
-def part_2(data):
+def part_2(data: list) -> int:
     total = 0
     for lo, hi, let, pw in data:
         if (pw[int(lo)-1] == let) is not (pw[int(hi) -1] == let):

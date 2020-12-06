@@ -10,14 +10,14 @@ from utils import integers
 GOAL = 2020
 
 
-def part_1(data):
+def part_1(data: list) -> int:
     for index_a, a in enumerate(data):
         for b in data[index_a:]:
             if a + b == GOAL:
                 return a * b
 
 
-def part_2(data):
+def part_2(data: list) -> int:
     for index_a, a in enumerate(data):
         for index_b, b in enumerate(data[index_a:]):
             for c in data[index_b:]:

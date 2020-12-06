@@ -8,11 +8,11 @@
 import re
 
 
-def part_1(data, regexps):
+def part_1(data: list, regexps: list) -> int:
     return sum(1 for pp in data if all(re.search(reg[1:4], pp) for reg in regexps))
 
 
-def part_2(data, regexps):
+def part_2(data: list, regexps: list) -> int:
     return sum(1 for pp in data if all(re.search(reg, pp) for reg in regexps))
 
 
