@@ -1,4 +1,4 @@
-""" day_06.py -- Advent of Code 2020 Day 5: Binary Boarding
+""" day_06.py -- Advent of Code 2020 Day 6: Custom Customs
 
     Author: Chris Bowman
     Last Modified: 12/6/2020

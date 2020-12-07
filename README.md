@@ -1,6 +1,6 @@
 # Advent of Code 2020
 
-Goals for this year include learning git, PyCharm, regex edge-cases.
+_Goals for this year include learning git, PyCharm, regex edge-cases, graphs (transversal, BFS, DFS, directed)._
                              
 ### [Day 01](solutions/day_01.py)
 I solved this with a naive double or triple for-loop, checking to make sure that the values for each entry was unique and returning the product when the two loops found the right sum.
@@ -20,4 +20,8 @@ This one asked to turn a string of letters into a row and column coordinate with
 
 
 ### [Day 06](solutions/day_06.py)
-Not as fast as the last few days.  First solved in jupyter then reworked in Pycharm for terseness (hopefully not at the expense of clarity).  After parsing the input data each function just needed a sum of set length, or a sum of a sum of `item.count(letter)`.  I first played with Counters but using sets are the easier and clearer option.  May be with another refactor still if it seems _too_ terse.
+Not as fast as the last few days.  First solved in jupyter then reworked in Pycharm for terseness (hopefully not at the expense of clarity).  After parsing the input data each function just needed a sum of set length, or a sum of a sum of `item.count(letter)`.  I first played with Counters but using sets are the easier and clearer option.  Maybe with another refactor still if it seems _too_ terse.
+
+
+### [Day 07](solutions/day_07.py)
+Hardest yet for me, something like a directed graph in the first part but reversing it and keeping track up the number of associated items within each child/parent.  Finished part 1 under 20 minutes but stumbled through part 2 doing unnecessary regex, writing a class to process each rule and not getting much progress.  Homework for the next day is traversing graphs.
