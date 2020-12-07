@@ -22,31 +22,29 @@ def part_1(rules: list, start_bag: str) -> int:
     return len(bags) - 1
 
 
-def part_2(*args):  # in progress
-    class Bag:
-        def __init__(self, rule):
-            self.main = re.findall(r'(\w* \w*) bag', rule)[0]
-            self.bag_count = utils.integers(rule)
-            if self.bag_count[0] == 0:
-                self.inside_cols = '0'
-            else:
-                self.inside_cols = re.findall(r'(\w* \w*) bag', rule)[1:]
+def part_2(rules, color):
+    bags = {}
+    for line in rules:
+        colors = re.findall(r'(\w* \w*) bag', line)
+        primary = colors[0]
+        secondary = list(zip(colors[1:], utils.integers(line)))
+        bags[primary] = dict(secondary)
 
-        def parsed(self):
-            return dict(zip(self.inside_cols, self.bag_count))
+    def stack(bag):
+        total = 1
+        if bags[bag]:
+            for inside in bags[bag]:
+                total += bags[bag][inside] * stack(inside)
+            return total
+        return total
 
-    dd = {}
-    for rule in args:
-        bag = Bag(rule)
-        dd[bag.main] = bag.parsed()
-
-    return 'In progress...'
+    return stack(color) - 1
 
 
 def main():
     d = open('../inputs/07').read().splitlines()
     print(part_1(d, 'shiny gold'))
-    print(part_2())  # in progress
+    print(part_2(d, 'shiny gold'))
 
 
 if __name__ == '__main__':
