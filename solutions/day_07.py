@@ -1,4 +1,4 @@
-""" day_07.py -- Advent of Code 2020 Day 7:
+""" day_07.py -- Advent of Code 2020 Day 7: Handy Haversacks
 
     Author: Chris Bowman
     Last Modified: 12/7/2020
@@ -22,13 +22,13 @@ def part_1(rules: list, start_bag: str) -> int:
     return len(bags) - 1
 
 
-def part_2(rules, color):
+def part_2(rules: list, color: str) -> int:
     bags = {}
     for line in rules:
         colors = re.findall(r'(\w* \w*) bag', line)
         primary = colors[0]
-        secondary = list(zip(colors[1:], utils.integers(line)))
-        bags[primary] = dict(secondary)
+        secondary = dict(zip(colors[1:], utils.integers(line)))
+        bags[primary] = secondary
 
     def stack(bag):
         total = 1
