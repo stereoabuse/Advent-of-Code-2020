@@ -24,4 +24,8 @@ Not as fast as the last few days.  First solved in jupyter then reworked in Pych
 
 
 ### [Day 07](solutions/day_07.py)
-Hardest yet for me, something like a directed graph in the first part but reversing it and keeping track up the number of associated items within each child/parent.  Finished part 1 under 20 minutes but stumbled through part 2 doing unnecessary regex, writing a class to process each rule and not getting much progress.  Homework for the next day is traversing graphs.
+Hardest yet for me, something like a directed graph in the first part but reversing it and keeping track up the number of associated items within each child/parent.  Finished part 1 under 20 minutes but stumbled through part 2 doing unnecessary regex, writing a class to process each rule and not getting much progress.  Solved with recursion thinking of the bag structure as a directed graph.
+
+
+### [Day 08](solutions/day_08.py)
+Could it be the return of 2019's [intcode](https://adventofcode.com/2019/day/5)? Sure, that was fun.  This asked us to follow a looping program and find how it would halt or under what conditions it would.  I started playing with PyCharms debugger which is quite powerful but ended up in Jupyter hacking out a semi-running program.  My to-dos for tomorrow for cleaning this code up are combining the two programs into one program that can take arguments.  Also something got screwy when I tried to reset lists that I was modifying and `list.copy()` didn't seem to help.  I'll investigate the `copy` module tomorrow. 17mins part 1/ 1hour20 part2. :(
