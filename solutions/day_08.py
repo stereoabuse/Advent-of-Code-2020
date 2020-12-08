@@ -6,71 +6,61 @@
 """
 
 
-def part_1():
-    def console(instructions):
-        accumulator = 0
-        seen = set()
-        index = 0
-        while True:
-            if index in seen:
-                return accumulator
-            if index == len(instructions):
-                return accumulator
-            seen.add(index)
-            operation, val = instructions[index]
-            if operation == 'nop':
-                index += 1
-            elif operation == 'acc':
-                accumulator += int(val)
-                index += 1
-            elif operation == 'jmp':
-                index += int(val)
-            if index >= len(instructions) + 1:
-                return accumulator
-
-    d = [i.split() for i in open('../inputs/08').read().splitlines()]
-    return console(d)
+def part_1(instructions):
+    accumulator = 0
+    index = 0
+    seen = set()
+    while True:
+        if index in seen:
+            return accumulator
+        seen.add(index)
+        op, val = instructions[index]
+        if op == 'jmp':
+            index += int(val)
+            continue
+        if op == 'acc':
+            accumulator += int(val)
+        if op == 'nop':
+            pass
+        index += 1
 
 
-# Duplicated codes need to be refactored to one single console program.
-def part_2():
-    def console(instructions):
-        accumulator = 0
-        seen = set()
-        index = 0
-        while True:
-            if index in seen:
-                return None
-            if index == len(instructions):
-                return accumulator
-            seen.add(index)
-            operation, val = instructions[index]
-            if operation == 'nop':
-                index += 1
-            elif operation == 'acc':
-                accumulator += int(val)
-                index += 1
-            elif operation == 'jmp':
-                index += int(val)
-            if index >= len(instructions) + 1:
-                return accumulator
+def game_console(instructions):
+    accumulator = 0
+    index = 0
+    seen = set()
+    while True:
+        if index == len(instructions):
+            return accumulator
+        if index in seen:
+            return None
+        seen.add(index)
+        op, val = instructions[index]
+        if op == 'jmp':
+            index += int(val)
+            continue
+        if op == 'acc':
+            accumulator += int(val)
+        if op == 'nop':
+            pass
+        index += 1
 
-    d = open('../inputs/08').read().splitlines()
 
+def part_2(d):
     for i in range(len(d)):
         d = [i.split() for i in open('../inputs/08').read().splitlines()]
-
-        if d[i][0] == 'nop':
+        if 'nop' in d[i]:
             d[i][0] = 'jmp'
-        elif d[i][0] == 'jmp':
+        elif 'jmp' in d[i]:
             d[i][0] = 'nop'
-        if console(d):
-            return console(d)
+        if game_console(d):
+            return game_console(d)
 
 
 def main():
-    print(part_2())
-    print(part_1())
+    d = [i.split() for i in open('../inputs/08').read().splitlines()]
+    print(part_1(d))
+    print(part_2(d))
 
 
 if __name__ == '__main__':
