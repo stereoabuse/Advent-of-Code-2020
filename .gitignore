@@ -7,6 +7,3 @@ solutions/config.py
 */.ipynb_checkpoints/*
 
 *.pyc
-
-# AoC input data isn't open source
-/inputs/
