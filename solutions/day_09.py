@@ -1,4 +1,4 @@
-""" day_09.py -- Advent of Code 2020 Day 9:
+""" day_09.py -- Advent of Code 2020 Day 9: Encoding Error
 
     Author: Chris Bowman
     Last Modified: 12/9/2020
