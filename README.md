@@ -1,6 +1,10 @@
 # Advent of Code 2020
 
 _Goals for this year include learning git, PyCharm, regex edge-cases, graphs (transversal, BFS, DFS, directed)._
+
+[`ranking.py`](ranking.py) prints daily placements for fun.  To use you'll need a `config.py` file with a COOKIES dict of session id.  It uses requests package so follow their cookies style.
+
+## Problem Journal
                              
 ### [Day 01](solutions/day_01.py)
 I solved this with a naive double or triple for-loop, checking to make sure that the values for each entry was unique and returning the product when the two loops found the right sum.
