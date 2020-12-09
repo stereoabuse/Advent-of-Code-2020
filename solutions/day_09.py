@@ -12,14 +12,15 @@ from utils import integers
 def xmas(preamble, data):
     for index, _ in enumerate(data):
         if index > preamble:
-            if not any(sum(i) == data[index] for i in combinations(data[index - preamble:index], 2)):
+            before = data[index - preamble:index]
+            if not any(sum(i) == data[index] for i in combinations(before, 2)):
                 return data[index]
 
 
 def part_2(preamble, data):
     ans = xmas(preamble, data)
     target = data.index(xmas(preamble, data))
-    for x in range(len(data[:target])):
+    for x, _ in enumerate(data[:target]):
         for y in range(x):
             if sum(data[y:x]) == ans:
                 return min(data[y:x]) + max(data[y:x])

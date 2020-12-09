@@ -29,3 +29,7 @@ Hardest yet for me, something like a directed graph in the first part but revers
 
 ### [Day 08](solutions/day_08.py)
 Could it be the return of 2019's [intcode](https://adventofcode.com/2019/day/5)? Sure, that was fun.  This asked us to follow a looping program and find how it would halt or under what conditions it would.  Something got screwy when I tried to reset lists that I was modifying for part 2 and `list.copy()` didn't seem to help.  `deepcopy` turns out to be very slow and just rereading the input file each time was 10x faster.  Haven't yet found a way to integrate the two console programs yet to include the error correction in part 2 without returning `None` for one of the parts.  If future days use this game console program in the same way as last year's intcode I'll generalize this program to handle all use-cases.
+
+
+### [Day 09](solutions/day_09.py)
+This one asked to find the number in the list that could not be the sum of any 2 of the n previous numbers. Then we use that number to find the min + max of a contiguous set of numbers in the original set that sum to it.  I used `itertools.combinations` for the heavy lifting of comparing all the integers pairs in part 1.  An alternative method is to iterate through the set of previous numbers to check if `target - i_of_set IN set`, which is probably faster.  Really slow in implementing all this today.
