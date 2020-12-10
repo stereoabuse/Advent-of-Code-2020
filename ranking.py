@@ -10,7 +10,7 @@
 import re
 import requests
 from bs4 import BeautifulSoup
-import config
+import solutions.config as config
 
 
 def daily_total():
@@ -23,12 +23,13 @@ def daily_total():
     soup = BeautifulSoup(r, features='html.parser')
     a = re.findall(r'\d *\d* *\d* *\*+', soup.text)
     day_totals = {}
-    for item in a:
+    for item in a[:-1]:
         try:
             the_day, total, partial, stars = item.split()
             day_totals[the_day] = int(total)
         except ValueError:
-            print('Error with parsing but it should still work\n\n')
+            print('Error with parsing but it should still work\n')
+            print(item)
 
     return day_totals
 
