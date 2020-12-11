@@ -1,7 +1,7 @@
 """ ranking.py -- Advent of Code 2020
 
     Author: Chris Bowman
-    Last Modified: 12/9/2020
+    Last Modified: 12/10/2020
     License: MIT
 
     Prints rank information for all days of AoC 2020 to console
@@ -21,15 +21,16 @@ def daily_total():
     url = 'https://adventofcode.com/2020/stats'
     r = requests.get(url).text
     soup = BeautifulSoup(r, features='html.parser')
-    a = re.findall(r'\d *\d* *\d* *\*+', soup.text)
+    a = re.findall(r'(\d{1,2}) +(\d+) +\d+ +\*+', soup.text)
     day_totals = {}
-    for item in a[:-1]:
+    for item in a:
         try:
-            the_day, total, partial, stars = item.split()
+            the_day, total = int(item[0]), int(item[1])
             day_totals[the_day] = int(total)
-        except ValueError:
-            print('Error with parsing but it should still work\n')
-            print(item)
+        except ValueError as ve:
+            print(ve)
+            print(soup)
+            exit()
 
     return day_totals
 
@@ -43,7 +44,7 @@ def personal_scores():
     r = requests.get(url, cookies=config.COOKIES).text
     soup = BeautifulSoup(r, features='html.parser')
     personal_stats = soup.find('pre').text
-    my_scores = {d.split()[0]: (int(d.split()[2]), int(d.split()[5])) for d in personal_stats.splitlines()[2:]}
+    my_scores = {int(d.split()[0]): (int(d.split()[2]), int(d.split()[5])) for d in personal_stats.splitlines()[2:]}
     return my_scores
 
 
@@ -61,7 +62,7 @@ def main():
             print(f'\tPart2: top {round(int(part_2) / int(both_all) * 100, 2)}%')
             print()
 
-    except NameError as ne:
+    except NameError:
         print('Make sure a "config.py" file is in this directory.  It needs')
         print('to have a variable COOKIES = {"session": YOUR_SESSION_ID}\n')
         print('You can find this in Chrome Devtools:')
