@@ -41,3 +41,15 @@ This one asked to find the number in the list that could not be the sum of any 2
 
 ### [Day 10](solutions/day_10.py)
 Part 1 was easy enough, but the dynamic programming is another thing that trips me up every time. I knew memoization was necessary given the "more than a trillion" warning in the problem text and that `@lrucache` would be used somehow.  Spent a while drawing random lines on graph paper until I peeked at a dp implementation to get me started.  Will be practicing this type lots more.  I'm beginning to be out of my element and I love it.
+
+
+## [Day 11](solutions/day_11.py)
+Cellular automata applied to finding occupied seats.  To check each adjacent seat I first tried to use `numpy.pad` to avoid IndexErrors.  That didn't really work and eventually found that checking to make sure each row/column coordinate was within the list was much easier.  Part 2 is similar but needs to check the slopes similar to day 3 - still working on implementing that.
+
+
+## Day 12
+*In progress*
+
+
+## [Day 13](solutions/day_13.py)
+Only finished part 1 so far.  Starting from the timestamp count up by one and check each but to see `if time % bus == 0` - if so then that's the right timestamp.  No clue how to do part 2 yet given that timestamp is at least 10 ^ 14.

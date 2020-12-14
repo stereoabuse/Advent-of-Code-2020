@@ -19,7 +19,7 @@ def part_1(data: list, slope: tuple) -> int:
     return trees
 
 
-def part_2(data: list, slopes: tuple) -> int:
+def part_2(data: list, slopes) -> int:
     return math.prod(part_1(data, slope) for slope in slopes)
 
 
