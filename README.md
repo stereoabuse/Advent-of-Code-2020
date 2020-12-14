@@ -53,3 +53,7 @@ Cellular automata applied to finding occupied seats.  To check each adjacent sea
 
 ## [Day 13](solutions/day_13.py)
 Only finished part 1 so far.  Starting from the timestamp count up by one and check each but to see `if time % bus == 0` - if so then that's the right timestamp.  No clue how to do part 2 yet given that timestamp is at least 10 ^ 14.
+
+
+## [Day 14](solutions/day_14.py)
+Bitmask operations.  Part one was straightforward with no gotchas.  I made what I believe was an indent-level error but wrote the code quick enough.  Part 2 in progress.
