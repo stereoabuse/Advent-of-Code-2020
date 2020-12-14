@@ -21,6 +21,15 @@ def adjacent(row, column, grid):
     return nearest
 
 
+def visible_seats(row, column, grid):
+    visible  = []
+    for x in range(row - 1, row + 2):
+        for y in range(column - 1, column + 2):
+            if 0 <= x < len(grid) and 0 <= y < len(grid[0]) and (x, y) != (row, column):
+                visible.append(grid[x][y])
+    return visible
+
+
 def part_1(seats):
     grid = seats
     count = 0
@@ -44,8 +53,21 @@ def part_1(seats):
         grid = new
 
 
+TEST = '''L.LL.LL.LL
+LLLLLLL.LL
+L.L.L..L..
+LLLL.LL.LL
+L.LL.LL.LL
+L.LLLLL.LL
+..L.L.....
+LLLLLLLLLL
+L.LLLLLL.L
+L.LLLLL.LL'''.splitlines()
+
+
 def main():
     seats = open('../inputs/11').read().splitlines()
+    seats = TEST
     print(part_1(seats))
 
 
