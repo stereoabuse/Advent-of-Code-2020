@@ -1,4 +1,4 @@
-""" day_14.py -- Advent of Code 2020 Day 14:
+""" day_14.py -- Advent of Code 2020 Day 14: Docking Data
 
     Author: Chris Bowman
     Last Modified: 12/14/2020

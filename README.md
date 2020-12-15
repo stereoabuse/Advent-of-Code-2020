@@ -56,3 +56,6 @@ Only finished part 1 so far.  Starting from the timestamp count up by one and ch
 
 ## [Day 14](solutions/day_14.py)
 Bitmask operations.  Part one was straightforward with no gotchas.  I made what I believe was an indent-level error but wrote the code quick enough.  Part 2 in progress.
+
+## [Day 15](solutions/day_15.py)
+Looped through a list looking at that last element for part 1.  Part 2 will have a dictionary lookup.
