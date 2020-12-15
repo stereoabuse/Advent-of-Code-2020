@@ -1,7 +1,7 @@
 """ day_11.py -- Advent of Code 2020 Day 11: Seating System
 
     Author: Chris Bowman
-    Last Modified: 12/11/2020
+    Last Modified: 12/14/2020
     License: MIT
 
     Make a cellular automata!
@@ -12,38 +12,18 @@ OCC = '#'
 FLR = '.'
 
 
-def adjacent(row, column, grid):
-    nearest = []
-    for x in range(row - 1, row + 2):
-        for y in range(column - 1, column + 2):
-            if 0 <= x < len(grid) and 0 <= y < len(grid[0]) and (x, y) != (row, column):
-                nearest.append(grid[x][y])
-    return nearest
-
-
-def visible_seats(row, column, grid):
-    visible  = []
-    for x in range(row - 1, row + 2):
-        for y in range(column - 1, column + 2):
-            if 0 <= x < len(grid) and 0 <= y < len(grid[0]) and (x, y) != (row, column):
-                visible.append(grid[x][y])
-    return visible
-
-
-def part_1(seats):
+def seating_system(seats, rule, model):
     grid = seats
-    count = 0
     while True:
         new = []
-        count += 1
         for r in range(len(grid)):
             new_line = []
             for c in range(len(grid[r])):
                 seat = grid[r][c]
-                near = adjacent(r, c, grid)
+                near = [i for i in model(r, c, grid)]
                 if seat == EMP and near.count(OCC) == 0:
                     new_line.append(OCC)
-                elif seat == OCC and near.count(OCC) >= 4:
+                elif seat == OCC and near.count(OCC) >= rule:
                     new_line.append(EMP)
                 else:
                     new_line.append(seat)
@@ -53,22 +33,31 @@ def part_1(seats):
         grid = new
 
 
-TEST = '''L.LL.LL.LL
-LLLLLLL.LL
-L.L.L..L..
-LLLL.LL.LL
-L.LL.LL.LL
-L.LLLLL.LL
-..L.L.....
-LLLLLLLLLL
-L.LLLLLL.L
-L.LLLLL.LL'''.splitlines()
+def adjacent(row, column, grid):
+    for x in range(row - 1, row + 2):
+        for y in range(column - 1, column + 2):
+            if 0 <= x < len(grid) and 0 <= y < len(grid[0]) and (x, y) != (row, column):
+                yield grid[x][y]
+
+
+def visible(row, column, grid):
+    for x in range(-1, 2):
+        for y in range(-1, 2):
+            if not x == y == 0:
+                i = 1
+                while 0 <= row + i * x < len(grid) and 0 <= column + i * y < len(grid[0]):
+                    if grid[row + i * x][column + i * y] != '.':
+                        yield grid[row + i * x][column + i * y]
+                        break
+                    i += 1
 
 
 def main():
     seats = open('../inputs/11').read().splitlines()
-    seats = TEST
-    print(part_1(seats))
+    part_1 = seating_system(seats, 4, adjacent)
+    part_2 = seating_system(seats, 5, visible)
+    print(part_1)
+    print(part_2)
 
 
 if __name__ == '__main__':

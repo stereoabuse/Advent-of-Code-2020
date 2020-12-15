@@ -44,7 +44,7 @@ def personal_scores():
     r = requests.get(url, cookies=config.COOKIES).text
     soup = BeautifulSoup(r, features='html.parser')
     personal_stats = soup.find('pre').text
-    my_scores = {int(d.split()[0]): (int(d.split()[2]), int(d.split()[5])) for d in personal_stats.splitlines()[2:]}
+    my_scores = {int(d.split()[0]): (d.split()[2], d.split()[5]) for d in personal_stats.splitlines()[2:]}
     return my_scores
 
 
@@ -55,12 +55,17 @@ def main():
         for day in sorted(mine):
             part_1, part_2 = mine[day]
             both_all = everyone[day]
-            if day == '1':
+            if day == 1:
                 print("*Day 1 didn't count, don't get excited*")
             print(f'On day {day} you placed {part_1}th and {part_2}th of {both_all}')
-            print(f'\tPart1: top {round(int(part_1) / int(both_all) * 100, 2)}%')
-            print(f'\tPart2: top {round(int(part_2) / int(both_all) * 100, 2)}%')
-            print()
+            if part_1.isdigit():
+                print(f'\tPart1: top {round(int(part_1) / int(both_all) * 100, 2)}%')
+            else:
+                print('\tPart1: not completed')
+            if part_2.isdigit():
+                print(f'\tPart2: top {round(int(part_2) / int(both_all) * 100, 2)}%')
+            else:
+                print('\tPart2: not completed')
 
     except NameError:
         print('Make sure a "config.py" file is in this directory.  It needs')
