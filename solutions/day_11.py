@@ -43,13 +43,12 @@ def adjacent(row, column, grid):
 def visible(row, column, grid):
     for x in range(-1, 2):
         for y in range(-1, 2):
-            if not x == y == 0:
-                i = 1
-                while 0 <= row + i * x < len(grid) and 0 <= column + i * y < len(grid[0]):
-                    if grid[row + i * x][column + i * y] != '.':
-                        yield grid[row + i * x][column + i * y]
-                        break
-                    i += 1
+            i = 1
+            while 0 <= row + i * x < len(grid) and 0 <= column + i * y < len(grid[0]) and not x == y == 0:
+                if grid[row + i * x][column + i * y] != '.':
+                    yield grid[row + i * x][column + i * y]
+                    break
+                i += 1
 
 
 def main():
