@@ -1,3 +1,5 @@
+*This repo is in progress*
+
 # Advent of Code 2020
 
 _Goals for this year include learning git, PyCharm, regex edge-cases, graphs (transversal, BFS, DFS, directed), dynamic programming._
