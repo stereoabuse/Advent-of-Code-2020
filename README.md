@@ -45,19 +45,19 @@ This one asked to find the number in the list that could not be the sum of any 2
 Part 1 was easy enough, but the dynamic programming is another thing that trips me up every time. I knew memoization was necessary given the "more than a trillion" warning in the problem text and that `@lrucache` would be used somehow.  Spent a while drawing random lines on graph paper until I peeked at a dp implementation to get me started.  Will be practicing this type lots more.  I'm beginning to be out of my element, and I love it. I think the difficulty just ramped up enough that I won't be completing part 2 in the same sitting as 1.
 
 
-## [Day 11](solutions/day_11.py)
+### [Day 11](solutions/day_11.py)
 Cellular automata applied to finding occupied seats.  To check each adjacent seat I first tried to use `numpy.pad` to avoid IndexErrors.  That didn't really work and eventually found that checking to make sure each row/column coordinate was within the list was much easier.  Part 2 is similar but needs to check the slopes similar to day 3 - still working on implementing that.
 
 
-## [Day 12](solutions/day_12.py)
+### [Day 12](solutions/day_12.py)
 Moving ships and waypoints around on a coordinate plane.  Nothing tricky with this but I did learn that `-90 % 360 == 270` which helped with assigning heading directions in part 1.  Part 2 still work in progress.
 
-## [Day 13](solutions/day_13.py)
+### [Day 13](solutions/day_13.py)
 Only finished part 1 so far.  Starting from the timestamp count up by one and check each but to see `if time % bus == 0` - if so then that's the right timestamp.  No clue how to do part 2 yet given that timestamp is at least 10 ^ 14.
 
 
-## [Day 14](solutions/day_14.py)
+### [Day 14](solutions/day_14.py)
 Bitmask operations.  Part one was straightforward with no gotchas.  I made what I believe was an indent-level error but wrote the code quick enough.  Part 2 in progress.
 
-## [Day 15](solutions/day_15.py)
+### [Day 15](solutions/day_15.py)
 Looped through a list looking at that last element for part 1.  Part 2 will have a dictionary lookup.
